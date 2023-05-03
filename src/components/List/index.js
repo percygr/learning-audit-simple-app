@@ -17,9 +17,7 @@ function List({ names }) {
     <div>
       {/* map through the state array */}
       {happiness.map((name) => (
-        <div className="border-me" key={Math.random()}>
-          {" "}
-          {/* you should provide id keys in your data model instead of using Math.random */}
+        <div className="border-me" key={name.id}>
           <div className="person-div">
             <div
               {...(name.isHappy

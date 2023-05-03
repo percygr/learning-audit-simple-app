@@ -5,10 +5,10 @@ import "./App.css";
 function App() {
   // make an array of fake names and isHappy boolean
   const names = [
-    { name: "John", isHappy: true },
-    { name: "Jane", isHappy: false },
-    { name: "Joe", isHappy: true },
-    { name: "Jill", isHappy: false },
+    { name: "John", isHappy: true, id: "1" },
+    { name: "Jane", isHappy: false, id: "2" },
+    { name: "Joe", isHappy: true, id: "3" },
+    { name: "Jill", isHappy: false, id: "4" },
   ];
 
   return (
