@@ -11,24 +11,30 @@ function List({ names }) {
     setIsHappy(person.isHappy);
   }
 
+  let displayText = "";
+
   return (
     <div>
       {names.map((name) => (
         <div className="border-me" key={Math.random()}>
           <div className="person-div">
-            <div>{name.name}</div>
-            {"   "}
             <div
               {...(name.isHappy
                 ? { style: { color: "#eeee00" } }
                 : { style: { color: "#cc0000" } })}
             >
-              {name.isHappy ? "is happy" : "is not happy"}
+              {" "}
+              {
+                (displayText =
+                  name.name +
+                  " " +
+                  (name.isHappy ? "is happy" : "is not happy"))
+              }
             </div>
           </div>
 
           <button id={name.name} onClick={() => handleClick(name)}>
-            Toggle happiness
+            Toggle happiness of {name.name}
           </button>
         </div>
       ))}
