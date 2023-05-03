@@ -11,8 +11,6 @@ function List({ names }) {
     setIsHappy(person.isHappy);
   }
 
-  let displayText = "";
-
   return (
     <div>
       {names.map((name) => (
