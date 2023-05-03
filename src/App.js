@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "./components/Button";
 import List from "./components/List";
 import "./App.css";
 
