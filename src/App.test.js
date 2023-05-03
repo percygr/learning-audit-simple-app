@@ -32,19 +32,14 @@ test("Jane is happy when her button is clicked after twice clicking john", async
   render(<App />);
 
   // make john unhappy
-  const johnButtonElement = screen.getByTestId("John", {
-    name: /toggle happiness of john/i,
-  });
+  const johnButtonElement = screen.getByTestId("John");
   //fireEvent.click(johnButtonElement);
   await userEvent.click(johnButtonElement);
   let johnElement = await screen.getByText(/John is not happy/i);
   expect(johnElement).toBeInTheDocument();
 
   //click again and check if john is happy now
-  const johnButtonElement2 = screen.getByRole("button", {
-    name: /toggle happiness of john/i,
-  });
-  //fireEvent.click(johnButtonElement);
+  const johnButtonElement2 = screen.getByTestId("John"); // this threw me, you have to get the button again as it forgets the first one
   await userEvent.click(johnButtonElement2);
   johnElement = await screen.getByText(/John is happy/i);
   expect(johnElement).toBeInTheDocument();
@@ -54,10 +49,7 @@ test("Jane is happy when her button is clicked after twice clicking john", async
   expect(janeTextElement).toBeInTheDocument();
 
   //click Jane's button to make her happy
-  const janeButtonElement = screen.getByRole("button", {
-    name: /toggle happiness of jane/i,
-  });
-  //fireEvent.click(janeButtonElement);
+  const janeButtonElement = screen.getByTestId("Jane");
   await userEvent.click(janeButtonElement);
   const janeElement = screen.getByText(/Jane is happy/i);
   expect(janeElement).toBeInTheDocument();
