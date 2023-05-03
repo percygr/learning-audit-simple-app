@@ -23,13 +23,7 @@ function List({ names }) {
                 ? { style: { color: "#eeee00" } }
                 : { style: { color: "#cc0000" } })}
             >
-              {" "}
-              {
-                (displayText =
-                  name.name +
-                  " " +
-                  (name.isHappy ? "is happy" : "is not happy"))
-              }
+              {name.name + " " + (name.isHappy ? "is happy" : "is not happy")}
             </div>
           </div>
 
